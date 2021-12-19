@@ -1,0 +1,14 @@
+version: '3'
+services:
+  docsify:
+    build: ./docker/anleitung
+    container_name: anleitung
+    ports:
+      - "9999:9999"
+      - "35728:35728"
+    volumes:
+        - ./docs:/site
+    working_dir: /site
+    command: docsify serve . -p 9999 --livereload-port 35728
+    
+
